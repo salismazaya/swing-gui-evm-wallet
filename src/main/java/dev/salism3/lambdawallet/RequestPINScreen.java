@@ -51,7 +51,7 @@ public class RequestPINScreen extends Screen {
                     navigateTo("DASHBOARD_SCREEN");
                 } catch (Exception e1) {
                     e1.printStackTrace();
-                    JOptionPane.showMessageDialog(Frame.getFrame(), "Wrong password");
+                    JOptionPane.showMessageDialog(null, "Wrong password");
                 }
             }
         });

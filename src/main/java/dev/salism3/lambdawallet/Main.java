@@ -1,5 +1,7 @@
 package dev.salism3.lambdawallet;
 
+import com.formdev.flatlaf.FlatLightLaf;
+
 public class Main {
     Frame frame;
 
@@ -8,6 +10,7 @@ public class Main {
     }
 
     Main() {
+        FlatLightLaf.setup();
         frame = new Frame();
     }
 

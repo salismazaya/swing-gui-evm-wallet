@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -28,13 +29,13 @@ import org.web3j.utils.Convert.Unit;
 import dev.salism3.lambdawallet.lib.Memory;
 import dev.salism3.lambdawallet.lib.Screen;
 
-public class Dashboard extends Screen {
+public class DashboardScreen extends Screen {
     JPanel mainPanel;
     Credentials credentials;
     Web3j web3j;
     JLabel balanceLabel;
     
-    Dashboard() {
+    public DashboardScreen() {
         web3j = Web3j.build(new HttpService("https://bsc-testnet.publicnode.com"));
         mainPanel = new BasePanel();
         mainPanel.setLayout(new GridLayout(3,1));
@@ -127,6 +128,16 @@ public class Dashboard extends Screen {
         JButton sendButton = new JButton("SEND");
         sendButton.setFont(font);
         
+        sendButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Frame frame = new Frame(new DashboardManagerPanel());
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            }
+            
+        });
+
+
         panel2.add(refreshButton, gbc3);
         panel2.add(sendButton, gbc4);
     }

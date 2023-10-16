@@ -101,7 +101,7 @@ public class LoadScreen extends Screen {
                 int i = 0;
                 for (JTextField input : mnemonic) {
                     if (input.getText().equals("")) {
-                        JOptionPane.showMessageDialog(Frame.getFrame(), "Mnemonic not complete");
+                        JOptionPane.showMessageDialog(null, "Mnemonic not complete");
                         return;
                     }
                     
@@ -113,12 +113,12 @@ public class LoadScreen extends Screen {
                 JPasswordField confirmPasswordInput = (JPasswordField)Interactive.getComponent("confirmPasswordInput");
 
                 if (createPasswordInput.getPassword().length < 1 || confirmPasswordInput.getPassword().length < 1) {
-                    JOptionPane.showMessageDialog(Frame.getFrame(), "Invalid input");
+                    JOptionPane.showMessageDialog(null, "Invalid input");
                     return;
                 }
 
                 if (!String.valueOf(createPasswordInput.getPassword()).equals(String.valueOf(confirmPasswordInput.getPassword()))) {
-                    JOptionPane.showMessageDialog(Frame.getFrame(), "Password and confirm password not same");
+                    JOptionPane.showMessageDialog(null, "Password and confirm password not same");
                     return;
                 }
 

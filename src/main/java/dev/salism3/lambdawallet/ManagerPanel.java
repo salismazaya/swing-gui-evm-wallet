@@ -32,6 +32,6 @@ public class ManagerPanel extends ScreenManager {
         }
 
         this.addScreen(new RequestPINScreen(), "REQUEST_PIN_SCREEN");
-        this.addScreen(new Dashboard(), "DASHBOARD_SCREEN");
+        this.addScreen(new DashboardScreen(), "DASHBOARD_SCREEN");
     }
 }

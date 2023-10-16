@@ -6,22 +6,24 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.formdev.flatlaf.FlatLightLaf;
-
-// import com.alee.laf.WebLookAndFeel;
+import dev.salism3.lambdawallet.lib.ScreenManager;
 
 public class Frame extends JFrame {
-    private static Frame frame;
+    ScreenManager manager;
 
-    public static Frame getFrame() {
-        return frame;
+    public Frame(ScreenManager manager) {
+        super();
+        this.manager = manager;
+        init();
     }
 
     public Frame() {
         super();
-        Frame.frame = this;
-        FlatLightLaf.setup();
+        this.manager = new ManagerPanel();
+        init();
+    }
 
+    private void init() {
         this.setTitle("LAMBDA WALLET");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 500);
@@ -45,9 +47,6 @@ public class Frame extends JFrame {
         this.add(keren3, BorderLayout.NORTH);
         this.add(keren4, BorderLayout.SOUTH);
 
-        JPanel manager = new ManagerPanel();
-
         this.add(manager, BorderLayout.CENTER);
-
     }
 }
